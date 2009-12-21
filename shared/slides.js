@@ -9,7 +9,7 @@
 
 
 $.ajaxSetup({async: false});
-$.getScript( 'shared/slides.core.js' );
+/*$.getScript( 'shared/slides.core.js' );*/
 $.ajaxSetup({async: true});
 
 $(document).ready(function(){
@@ -32,10 +32,12 @@ $(document).ready(function(){
            notOperaFix();
 					 
 					 steps = collectSteps();
+					 jumpToSlide();
          
          if( defaultView == 'outline' ) 
 		       toggle();
            
          document.onkeyup = keys;
+         
         }
      });

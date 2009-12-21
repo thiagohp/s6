@@ -3,12 +3,22 @@
 	 var incpos = 0;    /* current step in slide */ 
    var s6mode = true; /* are we in slide mode (in contrast to outline mode)? */ 
    var defaultView = 'slideshow'; /* slideshow | outline */
-   
+
+function jumpToSlide() {
+	var url = window.location.href;
+	var position = url.lastIndexOf('#');
+	if (position > 0) {
+		var slideNumber = url.substring(position + 1);
+		if (slideNumber.length > 0) {
+			go(slideNumber -1);
+		}
+	}
+}
 
  function debug( msg )	 
  {
 	 /* uncomment to enable debug messages in console such as Firebug */
-	 /* console.log( '[debug] ' + msg ); */
+	 /* console.log( '[debug] ' + msg );*/ 
  }	
 	 
  function showHide(action)
